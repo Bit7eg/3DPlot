@@ -1,0 +1,1 @@
+return isEquals(point.x*point.x + point.y*point.y + point.z*point.z, 4.0);

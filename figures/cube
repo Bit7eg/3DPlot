@@ -1,0 +1,1 @@
+return (abs(point.x) < 2 && abs(point.y) < 2 && abs(point.z) < 2);
