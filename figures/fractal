@@ -1,0 +1,29 @@
+int iters = 20;
+
+float x = point.x;
+float y = point.y;
+float z = point.z;
+float x2 = x*x;
+float y2 = y*y;
+float z2 = z*z;
+
+for (int i = 0; i < iters; i++) {
+    float xy = x*y;
+    float x2_y2 = x2 + y2;
+    float x2_y2_z2 = x2_y2 + z2;
+
+    if (x2_y2_z2 > 4) {
+        return 0!=0;
+    }
+
+    float c4f = x2_y2_z2*x2_y2_z2 - 8*z2*x2_y2;
+    float x2_y2_min_z2 = x2_y2 - z2;
+    x = c4f*(1 - 8*(xy*xy)/(x2_y2*x2_y2)) + point.x;
+    y = 4*c4f*xy*(x2-y2)/(x2_y2*x2_y2) + point.y;
+    z = 4*z*sqrt(x2_y2)*x2_y2_min_z2 + point.z;
+    x2 = x*x;
+    y2 = y*y;
+    z2 = z*z;
+}
+
+return 0==0;
